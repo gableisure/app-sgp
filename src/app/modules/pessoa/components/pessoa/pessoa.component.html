@@ -1,0 +1,84 @@
+<section class="container">
+    <div class="content">
+
+        <div class="content__header">
+            <h1>Pessoas</h1>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="content__info-produto">
+            <div class="table-container">
+                <table mat-table class="full-width-table" [dataSource]="pessoas">
+
+                  <ng-container class="ng-container" matColumnDef="id_pessoa">
+                    <th mat-header-cell *matHeaderCellDef>ID</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.id_pessoa}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="nm_pessoa">
+                    <th mat-header-cell *matHeaderCellDef>Nome</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.nm_pessoa}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="ed_email">
+                    <th mat-header-cell *matHeaderCellDef>Email</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.ed_email}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="dt_nascimento">
+                    <th mat-header-cell *matHeaderCellDef>Data de nascimento</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.dt_nascimento | date: 'dd/mm/yyyy'}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="nr_matricula_unb">
+                    <th mat-header-cell *matHeaderCellDef>Matrícula</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.nr_matricula_unb}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="nr_cpf">
+                    <th mat-header-cell *matHeaderCellDef>CPF</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.nr_cpf}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="nr_registro_geral">
+                    <th mat-header-cell *matHeaderCellDef>RG</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.nr_registro_geral}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="nm_orgao_emissor_rg">
+                    <th mat-header-cell *matHeaderCellDef>Orgão emissor</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.nm_orgao_emissor_rg}}</a>
+                    </td>
+                  </ng-container>
+
+                  <ng-container class="ng-container" matColumnDef="ds_vinculo_academico">
+                    <th mat-header-cell *matHeaderCellDef>Vínculo acadêmico</th>
+                    <td mat-cell *matCellDef="let row">
+                        <a>{{row.ds_vinculo_academico}}</a>
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/pessoas/{{row.id_pessoa}}"></tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>

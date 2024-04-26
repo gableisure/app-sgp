@@ -1,0 +1,239 @@
+<section class="container">
+  <div class="content">
+
+      <div class="content__header">
+
+        <div class="content__avatar">
+          <span class="avatar-letter">{{ pessoa.nm_pessoa | slice: 0:1 }}</span>
+        </div>
+
+        <div class="content__info-pessoa">
+          <h3 class="nm-pessoa">{{ pessoa.nm_pessoa }}</h3>
+          <span>{{ pessoa.tb_perfil.nm_perfil }}</span>
+          <!-- <div class="kpi">
+            <div>info 1</div>
+            <div>info 2</div>
+            <div>info 3</div>
+          </div> -->
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+    <div class="content-edit-pessoa">
+
+      <div class="content-edit-pessoa__left">
+
+        <mat-form-field>
+          <mat-label>
+            <i class="fa-solid fa-font"></i>
+            Nome
+          </mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nm_pessoa"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>
+            <i class="fa-solid fa-envelope"></i>
+            Email
+          </mat-label>
+          <input
+              matInput
+              type="email"
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ed_email"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>
+            <i class="fa-solid fa-calendar"></i>
+            Data de nascimento
+          </mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.dt_nascimento"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Perfil</mat-label>
+          <mat-select>
+              <mat-option *ngFor="let perfil of perfis">
+                  {{perfil.nm_perfil}}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Tipo vínculo acadêmico</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.tp_vinculo_academico"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Vínculo acadêmico</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ds_vinculo_academico"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Matrícula</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nr_matricula_unb"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>CPF</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nr_cpf"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>RG</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nr_registro_geral"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Órgão emissor</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nm_orgao_emissor_rg"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>
+            <i class="fa-solid fa-phone"></i>
+            Telefone principal
+          </mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nr_telefone_principal"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>
+            <i class="fa-solid fa-phone"></i>
+            Telefone secundário
+          </mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.nr_telefone_secundario"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+      </div>
+
+      <div class="content-edit-pessoa__right">
+
+        <mat-form-field>
+          <mat-label>Logradouro</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ed_logradouro"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>CEP</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ed_cep"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Bairro</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ed_bairro"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Cidade</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ed_cidade"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>UF</mat-label>
+          <input
+              matInput
+              (ngModelChange)="changeInput()"
+              [(ngModel)]="pessoa.ed_uf"
+              [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Link lattes</mat-label>
+          <input
+              matInput
+              value="http://lattes.cnpq.br/3643096577141727"
+          >
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" class="btn-lattes">
+          <a target="_blank" href="http://lattes.cnpq.br/3643096577141727">
+            Currículo Lattes
+            <i class="fa-solid fa-share"></i>
+          </a>
+        </button>
+        
+
+      </div>
+
+  </div>
+</section>

@@ -1,0 +1,49 @@
+.container {
+
+    .content {
+        padding: 20px;
+        row-gap: 10px;
+
+        &__header {
+            h1 {
+                font-weight: 600;
+            }
+        }
+
+        &__dashboard {
+            padding-top: 20px;
+        }
+
+        .container-kpi {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            column-gap: 10px;
+            padding: 10px;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 50px 80px;
+                border: 1px solid #cecece;
+                border-radius: 10px;
+                max-height: 110px;
+
+                #value {
+                    font-size: 3.2rem;
+                    margin-bottom: 1rem;
+                }
+
+                #label {
+                    font-size: .8rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+    }
+
+}

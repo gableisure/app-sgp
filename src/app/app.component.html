@@ -1,0 +1,34 @@
+<mat-toolbar class="toolbar">
+  <span>SGP - Sistema de Gestão de Projetos</span>
+</mat-toolbar>
+
+<mat-drawer-container class="sidenav">
+  
+  <mat-drawer mode="side" opened class="sidenav__menu">
+    <div>
+      <!-- <img
+        style="display: flex; justify-content: center; align-items: center;"
+        src="../assets/img/ana.png" width="200" alt=""> -->
+    </div>
+    <mat-nav-list>
+
+      <a mat-list-item href="/">
+        <i class="fa-solid fa-home"></i>
+        Dashboard
+      </a>
+
+      <a mat-list-item href="/pessoas">
+        <i class="fa-solid fa-users"></i>
+        Pessoas
+      </a>
+
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="page">
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
